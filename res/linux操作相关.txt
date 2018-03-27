@@ -1,0 +1,9 @@
+
+1.
+将39.106.112.62这台机器加入到白名单，过几分钟后生效，就不报这个错了
+554 Sender IP address rejected: Access denied
+
+2.
+java -cp .:javax.mail-1.5.5.jar:javax.mail-api-1.4.5.jar com/spring/springmvc/util/MailUtils
+
+

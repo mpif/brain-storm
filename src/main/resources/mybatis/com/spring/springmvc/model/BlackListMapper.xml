@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.springmvc.mapper.BlackListMapper" >
+  <resultMap id="BaseResultMap" type="com.spring.springmvc.model.BlackList" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="request_ip" property="requestIp" jdbcType="VARCHAR" />
+    <result column="unique_account" property="uniqueAccount" jdbcType="VARCHAR" />
+    <result column="last_send_time" property="lastSendTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, request_ip, unique_account, last_send_time, status, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from black_list
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="queryByIdAndAccount" resultMap="BaseResultMap" >
+    select
+        <include refid="Base_Column_List" />
+    from black_list
+    where
+        request_ip = #{requestIp,jdbcType=VARCHAR}
+        AND unique_account = #{uniqueAccount,jdbcType=VARCHAR}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from black_list
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.spring.springmvc.model.BlackList" >
+    insert into black_list (id, request_ip, unique_account, 
+      last_send_time, status, create_time, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{requestIp,jdbcType=VARCHAR}, #{uniqueAccount,jdbcType=VARCHAR}, 
+      #{lastSendTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.spring.springmvc.model.BlackList" >
+    insert into black_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="requestIp != null" >
+        request_ip,
+      </if>
+      <if test="uniqueAccount != null" >
+        unique_account,
+      </if>
+      <if test="lastSendTime != null" >
+        last_send_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="requestIp != null" >
+        #{requestIp,jdbcType=VARCHAR},
+      </if>
+      <if test="uniqueAccount != null" >
+        #{uniqueAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSendTime != null" >
+        #{lastSendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.spring.springmvc.model.BlackList" >
+    update black_list
+    <set >
+      <if test="requestIp != null" >
+        request_ip = #{requestIp,jdbcType=VARCHAR},
+      </if>
+      <if test="uniqueAccount != null" >
+        unique_account = #{uniqueAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSendTime != null" >
+        last_send_time = #{lastSendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.spring.springmvc.model.BlackList" >
+    update black_list
+    set request_ip = #{requestIp,jdbcType=VARCHAR},
+      unique_account = #{uniqueAccount,jdbcType=VARCHAR},
+      last_send_time = #{lastSendTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

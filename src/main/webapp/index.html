@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.1">
+    <title>简易思维导图</title>
+    <link href="static/imgs/icon.png" rel="icon">
+    <!--<script src="static/js/webapp.js"></script>-->
+
+
+    <script id="mainJsId"></script>
+
+
+    <script type="text/javascript">
+        var mainJsElm = document.getElementById("mainJsId");
+        var timestamp = new Date().getTime();
+        mainJsElm.src = "static/js/webapp.js?timestamp=" + timestamp;
+    </script>
+
+
+    <style>
+
+        /*::-webkit-scrollbar {
+            width: 0px;
+            height : 0px
+        }*/
+
+    </style>
+
+</head>
+
+<body style="width: 1366px;">
+
+<div style="position: absolute; left: 0px; top: 0px; width: 1366px; height: 728px; visibility: visible;">
+    <div style="position: absolute; left: 0px; top: 0px; width: 1366px; height: 728px; background-color: rgb(255, 255, 255);">
+        <div style="position: absolute; left: 0px; top: 60px; width: 1366px; height: 668px; background-color: rgb(255, 255, 255);">
+            <div style="position: absolute; left: 0px; top: 0px; width: 1366px; height: 668px; overflow: scroll;">
+                <div style="position: absolute; left: 0px; top: 0px; width: 1661px; height: 828px;">
+                    <canvas width="1661px" height="828px" style="position: absolute; width: 1661px; height: 828px;"></canvas>
+                    <div style="position: absolute; left: 396.5px; top: 386.5px; width: 30px; height: 30px;">
+                        <img crossorigin="Anonymous" src="static/imgs/btn_add.png" style="position: absolute; left: 3px; top: 3px; width: 24px; height: 24px;">
+                    </div>
+                    <textarea style="position: absolute; font-size: 15px; left: 286.5px; top: 366.5px; width: 110px; height: 29px; border: 0px; background-image: none; background-color: transparent; text-align: center;"></textarea>
+                    <div style="position: absolute; left: 261.5px; top: 386.5px; width: 30px; height: 30px; visibility: hidden;">
+                        <img crossorigin="Anonymous" src="static/imgs/btn_add.png" style="position: absolute; left: 3px; top: 3px; width: 24px; height: 24px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; left: 0px; top: 0px; width: 1366px; height: 60px; background-color: white;">
+            <div style="position: absolute; left: 0px; top: 0px; width: 1366px; height: 60px;">
+                <div style="position: absolute; left: 1320px; top: 17.5px; width: 36px; height: 25px;">
+                    <div style="display: table; position: absolute; left: 0px; top: 0px; width: 36px; height: 25px; text-align: center; color: rgb(0, 122, 255);">
+                        <span style="display: table-cell;vertical-align: middle">更多</span></div>
+                </div>
+                <div style="position: absolute; left: 1274px; top: 17.5px; width: 36px; height: 25px;">
+                    <div style="display: table; position: absolute; left: 0px; top: 0px; width: 36px; height: 25px; text-align: center; color: rgb(0, 122, 255);">
+                        <span style="display: table-cell;vertical-align: middle">导出</span></div>
+                </div>
+                <div style="position: absolute; left: 1228px; top: 17.5px; width: 36px; height: 25px;">
+                    <div style="display: table; position: absolute; left: 0px; top: 0px; width: 36px; height: 25px; text-align: center; color: rgb(0, 122, 255);">
+                        <span style="display: table-cell;vertical-align: middle">保存</span></div>
+                </div>
+                <div style="position: absolute; left: 1182px; top: 17.5px; width: 36px; height: 25px;">
+                    <div style="display: table; position: absolute; left: 0px; top: 0px; width: 36px; height: 25px; text-align: center; color: rgb(0, 122, 255);">
+                        <span style="display: table-cell;vertical-align: middle">打开</span></div>
+                </div>
+                <div style="position: absolute; left: 1136px; top: 17.5px; width: 36px; height: 25px;">
+                    <div style="display: table; position: absolute; left: 0px; top: 0px; width: 36px; height: 25px; text-align: center; color: rgb(0, 122, 255);">
+                        <span style="display: table-cell;vertical-align: middle">新建</span></div>
+                </div>
+                <div style="position: absolute; left: 10px; top: 17.5px; width: 107.203px; height: 25px;">
+                    <div style="display: table; position: absolute; left: 0px; top: 0px; width: 107.203px; height: 25px; text-align: center; color: rgb(0, 122, 255);">
+                        <span style="display: table-cell;vertical-align: middle"></span></div>
+                </div>
+                <div style="display: table; position: absolute; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 18px; line-height: normal; font-family: bold; left: 645px; top: 16px; width: 76px; height: 28px;">
+                    <span style="display: table-cell;vertical-align: middle">简易思维导图</span></div>
+            </div>
+            <div style="position: absolute; left: 0px; top: 59px; width: 1366px; height: 1px; background-color: rgb(178, 178, 178);"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

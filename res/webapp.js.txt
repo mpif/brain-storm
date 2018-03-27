@@ -1,0 +1,270 @@
+入口：
+UIApplicationMain
+
+
+MindNode
+
+
+UIBarButtonItem
+登录，新建，打开，保存，导出，更多等按钮元素
+
+NodeGraphView
+
+UIAlertView
+
+
+RootViewController
+super class is ----> UIViewController
+
+
+LoginViewController
+LoginViewController.onLoginBtnClick
+
+GraphFileListController
+
+VerifyCodeButton
+
+FreeMindExporter
+XMindExporter
+
+NSNotificationCenter
+
+HTML5：
+localStorage
+
+UserSessionManager
+
+UserAccount
+用户的三个属性：
+this.name = b;
+this.sessionId = c;
+this.paid = a
+
+
+发送Ajax请求相关：
+HttpRequest
+HttpAjax
+
+
+
+
+type: b.method(),
+url: b.url(),
+data: b.data(),
+dataType: "html",
+
+b.method:[POST],
+b.url:[saveFile],
+b.data:[
+
+{"objectClass":"NSDictionary","root":{"objectClass":"MindNode","ID":"Q815Y","rootPoint":{"objectClass":"CGPoint","x":276.5,"y":401.5},"lineColorHex":"#BBBBBB","children":{"0":{"objectClass":"MindNode","ID":"Y8OZ6","rootPoint":{"objectClass":"CGPoint","x":0,"y":0},"lineColorHex":"#DC306C","children":{"0":{"objectClass":"MindNode","ID":"5I0ZJ","rootPoint":{"objectClass":"CGPoint","x":0,"y":0},"lineColorHex":"#DC306C","children":{"objectClass":"NSArray"},"children2":{"objectClass":"NSArray"},"text":"dddd","shrink":false,"isLeft":false,"expandLeftEnable":false,"markType":0},"objectClass":"NSArray"},"children2":{"objectClass":"NSArray"},"text":"bbb","shrink":false,"isLeft":false,"expandLeftEnable":false,"markType":0},"1":{"objectClass":"MindNode","ID":"621M8","rootPoint":{"objectClass":"CGPoint","x":0,"y":0},"lineColorHex":"#BF58F5","children":{"objectClass":"NSArray"},"children2":{"objectClass":"NSArray"},"text":"cccc","shrink":false,"isLeft":false,"expandLeftEnable":false,"markType":0},"objectClass":"NSArray"},"children2":{"objectClass":"NSArray"},"text":"aaa","shrink":false,"isLeft":false,"expandLeftEnable":false,"markType":0}}
+
+]
+
+
+
+
+保存文件POST的body和header:
+jsonData:
+%7B%22objectClass%22%3A%22NSDictionary%22%2C%22root%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%22F1A26%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A276.5%2C%22y%22%3A401.5%7D%2C%22lineColorHex%22%3A%22%23BBBBBB%22%2C%22children%22%3A%7B%220%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%22518B1%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A0%2C%22y%22%3A0%7D%2C%22lineColorHex%22%3A%22%23DC306C%22%2C%22children%22%3A%7B%220%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%22DNE2G%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A0%2C%22y%22%3A0%7D%2C%22lineColorHex%22%3A%22%23DC306C%22%2C%22children%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22ddd%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%2C%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22bbb%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%2C%221%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%225T135%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A0%2C%22y%22%3A0%7D%2C%22lineColorHex%22%3A%22%23BF58F5%22%2C%22children%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22ccc%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%2C%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22aaa%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%7D=
+host
+connection
+content-length
+origin
+path
+user-agent
+content-type
+accept
+timestamp
+x-requested-with
+vc
+os
+referer
+accept-encoding
+accept-language
+cookie
+
+
+jsonData:
+%7B%22objectClass%22%3A%22NSDictionary%22%2C%22root%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%22F1A26%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A276.5%2C%22y%22%3A401.5%7D%2C%22lineColorHex%22%3A%22%23BBBBBB%22%2C%22children%22%3A%7B%220%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%22518B1%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A0%2C%22y%22%3A0%7D%2C%22lineColorHex%22%3A%22%23DC306C%22%2C%22children%22%3A%7B%220%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%22DNE2G%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A0%2C%22y%22%3A0%7D%2C%22lineColorHex%22%3A%22%23DC306C%22%2C%22children%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22ddd%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%2C%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22bbb%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%2C%221%22%3A%7B%22objectClass%22%3A%22MindNode%22%2C%22ID%22%3A%225T135%22%2C%22rootPoint%22%3A%7B%22objectClass%22%3A%22CGPoint%22%2C%22x%22%3A0%2C%22y%22%3A0%7D%2C%22lineColorHex%22%3A%22%23BF58F5%22%2C%22children%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22ccc%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%2C%22objectClass%22%3A%22NSArray%22%7D%2C%22children2%22%3A%7B%22objectClass%22%3A%22NSArray%22%7D%2C%22text%22%3A%22aaa%22%2C%22shrink%22%3Afalse%2C%22isLeft%22%3Afalse%2C%22expandLeftEnable%22%3Afalse%2C%22markType%22%3A0%7D%7D=
+host: localhost:8080
+connection: keep-alive
+content-length: 1141
+origin: http://localhost:8080
+path: %E6%B5%8B%E8%AF%95%E5%AF%BC%E5%9B%BE111.mm
+user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4033.400 QQBrowser/9.6.12624.400
+content-type: application/x-www-form-urlencoded; charset=UTF-8
+accept: text/html, */*; q=0.01
+timestamp: 1510890865
+x-requested-with: XMLHttpRequest
+vc: b02b89efc30a2ef6b2c2b64010b9becf
+os: 2
+referer: http://localhost:8080/
+accept-encoding: gzip, deflate
+accept-language: zh-CN,zh;q=0.8
+cookie: Hm_lvt_407473d433e871de861cf818aa1405a1=1502267050,1502331418,1502331648,1502336673; Hm_lvt_3c8ecbfa472e76b0340d7a701a04197e=1502267051,1502331418,1502331649,1502336673
+
+登录：
+Accept:text/html, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Cookie:BAEID=7F29166D9C03F244A07D8F60F43A4BB1
+Host:www.mindmm.com
+os:2
+Referer:http://www.mindmm.com/webapp
+timestamp:1511167802
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+vc:6f0b24608342bd566600eb2fd9b2cee2
+X-Requested-With:XMLHttpRequest
+Query String Parameters
+view source
+view URL encoded
+Query String Parameters:
+telephone:363874279@qq.com
+vcode:9478
+
+
+userSync用户同步：
+Accept:text/html, */*; q=0.01
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Content-Type:application/json; charset=UTF-8
+Cookie:JSESSIONID=D004C6282771D87982D8F9DA93F5E6FB
+Host:localhost:8080
+os:2
+Referer:http://localhost:8080/
+session:d76063f5ed80433d8bdada8527c764a6
+timestamp:1511242764
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+vc:eacf6fbf0287551d67960aeb55016930
+X-Requested-With:XMLHttpRequest
+
+
+
+登录返回内容：
+{"rtn":0,"data":{"paid":false,"session":"a9kr21u5842uzk3p0cc4"},"msg":""}
+
+
+保存文件headers：
+Accept:text/html, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Content-Length:1417
+Content-Type:application/x-www-form-urlencoded; charset=UTF-8
+Cookie:BAEID=7F29166D9C03F244A07D8F60F43A4BB1
+Host:www.mindmm.com
+Origin:http://www.mindmm.com
+os:2
+path:/%E5%AF%BC%E5%9B%BEaaa.mm
+Referer:http://www.mindmm.com/webapp
+session:6p0h3r2rrcw700ck97fk
+timestamp:1510896005
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+vc:0ca416d7a6e986f9e332244bee89d186
+X-Requested-With:XMLHttpRequest
+
+退出登录：
+Accept:text/html, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Cookie:BAEID=7F29166D9C03F244A07D8F60F43A4BB1
+Host:www.mindmm.com
+os:2
+Referer:http://www.mindmm.com/webapp
+session:6p0h3r2rrcw700ck97fk
+timestamp:1510909277
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+vc:f1d02353efd61d39c2a193378d3d85b1
+X-Requested-With:XMLHttpRequest
+
+
+查询文件列表listFiles：
+Accept:text/html, */*; q=0.01
+Accept-Encoding:gzip, deflate
+Accept-Language:zh-CN,zh;q=0.9
+Connection:keep-alive
+Cookie:BAEID=7F29166D9C03F244A07D8F60F43A4BB1
+Host:www.mindmm.com
+os:2
+Referer:http://www.mindmm.com/webapp
+session:4zmap04ha069r9r00k3u
+timestamp:1510909460
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
+vc:c267c3646e7c999842caf4252658b508
+X-Requested-With:XMLHttpRequest
+
+
+保存：
+{"rtn":0,"data":{},"msg":""}
+
+登录返回信息：
+{"rtn":0,"data":{"paid":false,"session":"z458m02z9zp5khhucc36"},"msg":""}
+
+同步用户登录信息返回值：
+{"rtn":0,"data":{"paid":false,"name":"363874279@qq.com"},"msg":""}
+
+退出
+{"rtn":0,"data":{},"msg":""}
+
+listFile
+{"rtn":0,"data":{"files":["å¯¼å›¾aaa.mm"]},"msg":""}
+
+{"rtn":0,"data":{"files":["aaa.mm","å¯¼å›¾aaa.mm"]},"msg":""}
+
+verifyCode：
+{"rtn":0,"data":{},"msg":""}
+
+exportFile返回值:
+{"rtn":0,"data":{"url":"http://7te7vq.com1.z0.glb.clouddn.com/9A0709.mm"},"msg":""}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

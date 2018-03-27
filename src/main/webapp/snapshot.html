@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.1">
+    <title>导图快照</title>
+</head>
+
+<link href="static/imgs/icon.png" rel="icon">
+
+<script src="static/js/jquery-3.2.1.min.js"></script>
+
+<script>
+
+    /**
+     * 获取mimeType
+     * @param  {String} type the old mime-type
+     * @return the new mime-type
+     */
+    var _fixType = function(type) {
+        type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+        var r = type.match(/png|jpeg|bmp|gif/)[0];
+        return 'image/' + r;
+    };
+
+    /**
+     * 在本地进行文件保存
+     * @param  {String} data     要保存到本地的图片数据
+     * @param  {String} filename 文件名
+     */
+    var saveFile = function(data, filename){
+        var saveLink = document.createElement("a");
+        saveLink.href = data;
+        saveLink.download = filename;
+        saveLink.click();
+    };
+
+    // 图片导出为 png 格式
+    var type = 'jpeg';
+    var imgData;
+
+    $(document).ready(function () {
+
+        var snapshot = localStorage.snapshot
+
+        if (snapshot) {
+
+            //不管是直接显示还是导出,都需要先转成json
+            snapshot = JSON.parse(snapshot)
+
+            var img = $("<img/>")
+            img.attr("src", snapshot.data)
+            img.css("width", snapshot.width)
+            img.css("height", snapshot.height)
+            $("body").append(img)
+
+//            imgData = snapshot.data;
+//            // 加工image data，替换mime type
+//            imgData = imgData.replace(_fixType(type),'image/octet-stream');
+//            // 下载后的问题名
+//            var filename = 'baidufe_' + (new Date()).getTime() + '.' + type;
+//            // download
+//            saveFile(imgData, filename);
+
+        }
+
+    })
+
+</script>
+
+<body>
+
+</body>
+</html>

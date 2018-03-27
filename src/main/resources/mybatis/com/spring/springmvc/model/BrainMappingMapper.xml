@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.springmvc.mapper.BrainMappingMapper" >
+  <resultMap id="BaseResultMap" type="com.spring.springmvc.model.BrainMapping" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="unique_no" property="userUniqueNo" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.spring.springmvc.model.BrainMapping" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, path, user_unique_no, create_time, update_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from brain_mapping
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="queryBrainMappingList" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+    from brain_mapping
+    where user_unique_no = #{userUniqueNo,jdbcType=BIGINT}
+  </select>
+
+  <select id="queryBrainMappingAllList" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from brain_mapping
+  </select>
+
+
+  <select id="queryBrainMappingByPath" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from brain_mapping
+    where path = #{path,jdbcType=BIGINT}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from brain_mapping
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.spring.springmvc.model.BrainMapping" >
+    insert into brain_mapping (id, path, content, user_unique_no, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{path,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}, #{userUniqueNo,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.spring.springmvc.model.BrainMapping" >
+    insert into brain_mapping
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="path != null" >
+        path,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="userUniqueNo != null" >
+        user_unique_no,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="userUniqueNo != null" >
+        #{userUniqueNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelective" parameterType="com.spring.springmvc.model.BrainMapping" >
+    update brain_mapping
+    <set >
+      <if test="path != null" >
+          path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+          content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="updateTime != null" >
+          update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where 1=1
+    <if test="id != null" >
+        AND id = #{id,jdbcType=BIGINT}
+    </if>
+    <if test="path != null" >
+        AND path = #{path,jdbcType=VARCHAR}
+    </if>
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.spring.springmvc.model.BrainMapping" >
+    update brain_mapping
+    set path = #{path,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      update_time = now()
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.spring.springmvc.model.BrainMapping" >
+    update brain_mapping
+    set path = #{path,jdbcType=VARCHAR},
+    update_time = now()
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+</mapper>
